@@ -33,6 +33,18 @@ Build file place tanpa Studio: `rojo build -o game.rbxl`
 
 Ganti animasi: ubah asset ID di `src/shared/AnimationConfig.luau`. Animasi custom harus di-upload oleh akun/grup yang sama dengan pemilik game.
 
+## Animasi NPC display
+
+NPC (misalnya karakter yang dipajang di shop) dianimasikan oleh `src/server/init.server.luau`:
+
+1. Pilih Model NPC di Studio, tambahkan tag `AnimatedNPC` (Properties > Tags).
+2. Tambah attribute `AnimationId` bertipe **string**, isi dengan ID animasinya.
+3. Play. Animasi diputar looping di server.
+
+Model NPC-nya ada di file place, bukan di repo ini, jadi tag dan attribute di-set langsung di Studio.
+
+Animasi harus dibuat untuk rig yang sama dengan NPC-nya (R6 atau R15), dan dimiliki oleh akun/grup pemilik game.
+
 ## Lint & format
 
 ```

@@ -52,6 +52,10 @@ function AnimationController.play(
 	self._current = name
 end
 
+function AnimationController.track(self: AnimationController, name: string): AnimationTrack?
+	return self._tracks[name]
+end
+
 function AnimationController.current(self: AnimationController): string?
 	return self._current
 end
