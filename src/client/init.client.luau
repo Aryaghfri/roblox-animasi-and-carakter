@@ -1,0 +1,2 @@
+--!strict
+-- Entry point client (StarterPlayerScripts). Input, UI, kamera nanti ditaruh di sini.

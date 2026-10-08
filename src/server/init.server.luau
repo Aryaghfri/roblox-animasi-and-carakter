@@ -1,0 +1,2 @@
+--!strict
+-- Entry point server. Logic NPC / gameplay nanti ditaruh di sini.
