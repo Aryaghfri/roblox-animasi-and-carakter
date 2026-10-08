@@ -12,9 +12,16 @@ local character = script.Parent
 local humanoid = character:WaitForChild("Humanoid") :: Humanoid
 local animator = humanoid:WaitForChild("Animator") :: Animator
 
-local controller = AnimationController.new(animator, AnimationConfig.Locomotion)
+-- Game pakai Player Choice, jadi set animasi dipilih dari rig karakter yang spawn.
+local rig = AnimationConfig.Rigs[humanoid.RigType.Name]
+if not rig then
+	warn(`[Animate] rig type {humanoid.RigType.Name} belum ada di AnimationConfig`)
+	return
+end
+
+local controller = AnimationController.new(animator, rig.ids)
 local fade = AnimationConfig.FadeTime
-local baseSpeed = AnimationConfig.BaseSpeed
+local baseSpeed = rig.baseSpeed
 
 local function isAirborne(): boolean
 	local state = humanoid:GetState()

@@ -27,11 +27,12 @@ Build file place tanpa Studio: `rojo build -o game.rbxl`
 
 `Animate.client.luau` ditaruh di StarterCharacterScripts dengan nama `Animate`, sehingga otomatis menggantikan script animasi default Roblox. Script ini dengerin event `Humanoid` (`Running`, `Jumping`, `FreeFalling`, `Climbing`, `Died`) lalu manggil `AnimationController:play()`.
 
+- Set animasi dipilih dari `Humanoid.RigType` (R6 atau R15), karena game pakai avatar Player Choice.
 - idle / walk / run dipilih dari kecepatan karakter, dengan threshold di `AnimationConfig`.
 - Kecepatan putar walk/run/climb di-scale sesuai kecepatan gerak biar kaki nggak "ngepel".
 - Animasi run baru kepake kalau `WalkSpeed` di atas `RunThreshold` (default 20), misalnya dari fitur sprint.
 
-Ganti animasi: ubah asset ID di `src/shared/AnimationConfig.luau`. Animasi custom harus di-upload oleh akun/grup yang sama dengan pemilik game.
+Ganti animasi: ubah asset ID di `AnimationConfig.Rigs.R6` / `AnimationConfig.Rigs.R15` (`src/shared/AnimationConfig.luau`). Animasi custom harus di-upload oleh akun/grup yang sama dengan pemilik game.
 
 ## Animasi NPC display
 
